@@ -1,0 +1,471 @@
+/* ============================================
+   PORTFOLIO PESSOAL - estilo.css
+   Para mudar as cores do site inteiro, basta
+   alterar as variaveis abaixo.
+   ============================================ */
+
+:root {
+  /* ALTERE (opcional): cores do site */
+  --cor-fundo: #FAF8F5;       /* fundo principal (off-white) */
+  --cor-fundo-alt: #EFEAE2;   /* fundo das secoes alternadas */
+  --cor-texto: #2E2E2E;       /* texto principal */
+  --cor-texto-suave: #5C5C5C; /* textos secundarios */
+  --cor-principal: #1E3A5F;   /* azul-marinho: titulos, topo e rodape */
+  --cor-destaque: #A0522D;    /* terracota: botoes e detalhes */
+  --cor-clara: #E8C9A0;       /* areia: detalhes sobre o azul */
+  --cor-branca: #FFFFFF;
+
+  --fonte: "Segoe UI", Roboto, Arial, sans-serif;
+  --largura-max: 1000px;
+  --raio: 8px;
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* folga do tamanho do topo fixo: sem ela, o menu cobre o titulo da secao */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  color: var(--cor-principal);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+/* linha decorativa embaixo dos titulos das secoes */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background-color: var(--cor-destaque);
+  border-radius: 2px;
+}
+
+a {
+  color: var(--cor-destaque);
+}
+
+a:hover {
+  color: var(--cor-principal);
+}
+
+/* contorno visivel para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* texto que so o leitor de tela le */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* link "Pular para o conteudo": aparece so ao receber foco */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background-color: var(--cor-branca);
+  color: var(--cor-principal);
+}
+
+.pular:focus {
+  left: 0.5rem;
+}
+
+/* ---------- Topo e menu ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--cor-principal);
+}
+
+.topo-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.logo {
+  color: var(--cor-branca);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--cor-clara);
+}
+
+.botao-menu {
+  font-size: 1.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--cor-branca);
+  background: none;
+  border: 2px solid var(--cor-clara);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.topo nav {
+  width: 100%;
+}
+
+/* no celular o menu comeca escondido */
+.menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 0;
+}
+
+/* classe colocada pelo script.js quando o menu abre */
+.menu.aberto {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 0.6rem 0;
+  color: var(--cor-branca);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--cor-clara);
+}
+
+/* ---------- Apresentacao ---------- */
+
+.apresentacao {
+  padding: 3rem 0;
+}
+
+.apresentacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--cor-clara);
+}
+
+.saudacao {
+  margin: 0;
+  color: var(--cor-destaque);
+  font-weight: 600;
+}
+
+.apresentacao h1 {
+  margin: 0.25rem 0;
+  font-size: 2.2rem;
+}
+
+.cargo {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--cor-texto-suave);
+}
+
+.resumo {
+  max-width: 34rem;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.botao {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: var(--cor-branca);
+  background-color: var(--cor-destaque);
+  border: 2px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  color: var(--cor-branca);
+  background-color: var(--cor-principal);
+  border-color: var(--cor-principal);
+}
+
+.botao-secundario {
+  color: var(--cor-principal);
+  background-color: transparent;
+  border-color: var(--cor-principal);
+}
+
+/* ---------- Secoes ---------- */
+
+.secao {
+  padding: 3.5rem 0;
+}
+
+.secao-alternada {
+  background-color: var(--cor-fundo-alt);
+}
+
+/* Formacao */
+.lista-formacao {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-formacao {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  background-color: var(--cor-branca);
+  border-left: 5px solid var(--cor-destaque);
+  border-radius: var(--raio);
+}
+
+.item-formacao h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.instituicao {
+  margin: 0;
+  font-weight: 600;
+}
+
+.periodo {
+  margin: 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* Habilidades */
+.lista-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-habilidades li {
+  padding: 0.5rem 1rem;
+  color: var(--cor-principal);
+  background-color: var(--cor-fundo-alt);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Projetos */
+.grade-projetos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card-projeto {
+  overflow: hidden;
+  background-color: var(--cor-branca);
+  border-radius: var(--raio);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-projeto img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card-conteudo {
+  padding: 1.25rem;
+}
+
+.card-conteudo h3 {
+  margin-top: 0;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.tecnologias li {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  color: var(--cor-principal);
+  background-color: var(--cor-fundo-alt);
+  border-radius: 4px;
+}
+
+.links-projeto {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.links-projeto a {
+  font-weight: 600;
+}
+
+/* Contato */
+.lista-contato {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-contato li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--cor-fundo-alt);
+}
+
+.rotulo-contato {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.lista-contato a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* ---------- Rodape ---------- */
+
+.rodape {
+  padding: 1.5rem 0;
+  color: var(--cor-branca);
+  background-color: var(--cor-principal);
+  text-align: center;
+}
+
+.rodape p {
+  margin: 0.25rem 0;
+}
+
+.rodape a {
+  color: var(--cor-clara);
+}
+
+.rodape a:hover {
+  color: var(--cor-branca);
+}
+
+/* ---------- Telas a partir de 768px (tablet e computador) ---------- */
+
+@media (min-width: 768px) {
+  .botao-menu {
+    display: none;
+  }
+
+  .topo nav {
+    width: auto;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .apresentacao {
+    padding: 5rem 0;
+  }
+
+  .apresentacao-conteudo {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .botoes {
+    justify-content: flex-start;
+  }
+
+  .grade-projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Telas a partir de 1024px ---------- */
+
+@media (min-width: 1024px) {
+  .grade-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* respeita quem pediu menos animacao no sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .botao {
+    transition: none;
+  }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ALTERE: troque pelo seu nome e pela sua area -->
+  <title>Seu Nome | Desenvolvedor(a) Front-end</title>
+  <meta name="description" content="Portfolio de Seu Nome, estudante de Analise e Desenvolvimento de Sistemas. Projetos em HTML, CSS e JavaScript.">
+
+  <!-- ALTERE (opcional): o icone da aba fica em img/favicon.svg; troque SN pelas suas iniciais -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ========== CABECALHO E MENU ========== -->
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <!-- ALTERE: suas iniciais ou seu primeiro nome -->
+      <a class="logo" href="#inicio">Seu Nome</a>
+
+      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="visualmente-oculto">Abrir menu</span>
+        ☰
+      </button>
+
+      <nav aria-label="Principal">
+        <ul class="menu" id="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ========== APRESENTACAO (primeira coisa que o recrutador ve) ========== -->
+    <section class="apresentacao" id="inicio">
+      <div class="container apresentacao-conteudo">
+
+        <!-- ALTERE: coloque sua foto na pasta img com o nome foto-perfil.jpg
+             (quadrada, rosto bem iluminado, fundo simples). O alt deve ter seu nome. -->
+        <img class="foto" src="img/foto-perfil.jpg" alt="Foto de Seu Nome" width="220" height="220">
+
+        <div>
+          <p class="saudacao">Olá, eu sou</p>
+          <!-- ALTERE: seu nome completo ou como quer ser chamado(a) -->
+          <h1>Matheus</h1>
+          <!-- ALTERE: o que voce faz ou quer fazer -->
+          <p class="cargo">Desenvolvedor(a) Front-end em formação</p>
+          <!-- ALTERE: uma ou duas frases sobre voce -->
+          <p class="resumo">
+            Estudante de Análise e Desenvolvimento de Sistemas, apaixonado(a) por criar
+            páginas bonitas, acessíveis e fáceis de usar.
+          </p>
+
+          <div class="botoes">
+            <a class="botao" href="#projetos">Ver projetos</a>
+            <a class="botao botao-secundario" href="#contato">Entrar em contato</a>
+            <!-- OPCIONAL: se tiver curriculo em PDF, coloque na pasta docs
+                 e tire o comentario da linha abaixo -->
+            <!-- <a class="botao botao-secundario" href="docs/curriculo.pdf" download>Baixar currículo</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SOBRE MIM ========== -->
+    <section class="secao" id="sobre">
+      <div class="container">
+        <h2>Sobre mim</h2>
+        <!-- ALTERE: escreva 2 ou 3 paragrafos curtos (veja sugestoes no INSTRUCOES.md) -->
+        <p>
+          Escreva aqui quem você é, de onde vem e o que te levou para a tecnologia.
+          Conte o que você gosta de fazer e o que está estudando agora.
+        </p>
+        <p>
+          Fale também sobre o tipo de oportunidade que procura: estágio, primeiro emprego,
+          trabalhos freelancer ou projetos voluntários.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== FORMACAO (escolaridade e cursos) ========== -->
+    <section class="secao secao-alternada" id="formacao">
+      <div class="container">
+        <h2>Formação</h2>
+
+        <ul class="lista-formacao">
+          <!-- ALTERE: um <li> para cada curso. Copie e cole o bloco para adicionar mais. -->
+          <li class="item-formacao">
+            <h3>Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
+            <p class="instituicao">CEUNSP</p>
+            <p class="periodo">Início em 2025 · Previsão de conclusão em 2027</p>
+          </li>
+
+          <li class="item-formacao">
+            <h3>Ensino Médio</h3>
+            <p class="instituicao">Nome da escola</p>
+            <p class="periodo">Concluído em 2024</p>
+          </li>
+
+          <!-- Cursos livres e certificados tambem contam -->
+          <li class="item-formacao">
+            <h3>Nome do curso livre (ex.: JavaScript básico)</h3>
+            <p class="instituicao">Plataforma ou instituição</p>
+            <p class="periodo">Concluído em 2025 · 20 horas</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section class="secao" id="habilidades">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <!-- ALTERE: deixe so o que voce realmente sabe usar. Apague ou adicione <li>. -->
+        <ul class="lista-habilidades">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Bootstrap</li>
+          <li>Git e GitHub</li>
+          <li>Acessibilidade web</li>
+          <li>Inglês técnico</li>
+          <li>Trabalho em equipe</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section class="secao secao-alternada" id="projetos">
+      <div class="container">
+        <h2>Projetos</h2>
+        <p>Alguns trabalhos que desenvolvi durante o curso e por conta própria.</p>
+
+        <div class="grade-projetos">
+
+          <!-- ALTERE: um <article> para cada projeto.
+               Imagem: print do projeto na pasta img (ex.: projeto-1.jpg).
+               Links: repositorio no GitHub e, se tiver, o site publicado. -->
+          <article class="card-projeto">
+            <img src="img/projeto-1.jpg" alt="Tela inicial da lista de tarefas" width="600" height="340">
+            <div class="card-conteudo">
+              <h3>Lista de tarefas</h3>
+              <p>Aplicação que adiciona, risca e remove tarefas e guarda tudo no navegador com localStorage.</p>
+              <ul class="tecnologias">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="links-projeto">
+                <a href="https://github.com/seu-usuario/lista-de-tarefas">Código</a>
+                <a href="https://seu-usuario.github.io/lista-de-tarefas/">Ver online</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-projeto">
+            <img src="img/projeto-2.jpg" alt="Página inicial do site da cafeteria" width="600" height="340">
+            <div class="card-conteudo">
+              <h3>Site de cafeteria</h3>
+              <p>Site institucional com cardápio, página de contato e layout que se adapta ao celular.</p>
+              <ul class="tecnologias">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Flexbox</li>
+              </ul>
+              <div class="links-projeto">
+                <a href="https://github.com/seu-usuario/site-cafeteria">Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-projeto">
+            <img src="img/projeto-3.jpg" alt="Formulário de cadastro com validação" width="600" height="340">
+            <div class="card-conteudo">
+              <h3>Formulário acessível</h3>
+              <p>Formulário de inscrição com validação, mensagens de erro claras e uso completo pelo teclado.</p>
+              <ul class="tecnologias">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Acessibilidade</li>
+              </ul>
+              <div class="links-projeto">
+                <a href="https://github.com/seu-usuario/formulario-acessivel">Código</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="secao" id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Estou aberto(a) a oportunidades de estágio e primeiro emprego. Fale comigo:</p>
+
+        <!-- ALTERE: seus links. Apague o que voce nao usa. -->
+        <ul class="lista-contato">
+          <li>
+            <span class="rotulo-contato">E-mail</span>
+            <a href="mailto:seu.email@exemplo.com">seu.email@exemplo.com</a>
+          </li>
+          <li>
+            <span class="rotulo-contato">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/seu-perfil">linkedin.com/in/seu-perfil</a>
+          </li>
+          <li>
+            <span class="rotulo-contato">GitHub</span>
+            <a href="https://github.com/seu-usuario">github.com/seu-usuario</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== RODAPE ========== -->
+  <footer class="rodape">
+    <div class="container">
+      <!-- ALTERE: seu nome. O ano e preenchido pelo script.js -->
+      <p>© <span id="ano"></span> Seu Nome. Feito com HTML, CSS e JavaScript.</p>
+      <p><a href="#inicio">Voltar ao topo</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

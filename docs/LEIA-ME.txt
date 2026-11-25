@@ -1,0 +1,2 @@
+Coloque aqui o seu curriculo em PDF com o nome curriculo.pdf
+e tire o comentario do botao "Baixar curriculo" no index.html.
